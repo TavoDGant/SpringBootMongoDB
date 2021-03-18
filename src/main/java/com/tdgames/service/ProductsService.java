@@ -19,7 +19,7 @@ public class ProductsService {
 	private IDIncrementService idIncrementService;
 	
 	public void saveProduct(Products products) {
-		products.setId(idIncrementService.generateSequence(Products.SEQUENCE_NAME));
+		products.setId(idIncrementService.generateSequence(Products.SEQUENCE_NAME));//This is to add an autoincrement ID
 		productsRepository.save(products);
 		System.out.println("Guardado");
 	}
