@@ -28,4 +28,5 @@ public class DataBaseSequence {
     public void setSeq(long seq) {
         this.seq = seq;
     }
+    
 }

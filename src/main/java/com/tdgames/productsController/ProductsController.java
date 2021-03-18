@@ -48,4 +48,5 @@ public class ProductsController {
 		productsService.deleteProduct(id.toString());
 		return ""+HttpStatus.OK;
 	}
+	
 }

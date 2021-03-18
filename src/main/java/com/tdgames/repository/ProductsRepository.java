@@ -8,4 +8,5 @@ import com.tdgames.entity.Products;
 @Repository
 public interface ProductsRepository extends MongoRepository<Products, String>{
 
+	
 }
