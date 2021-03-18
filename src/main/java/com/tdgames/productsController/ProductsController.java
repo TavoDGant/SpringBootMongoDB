@@ -23,7 +23,7 @@ public class ProductsController {
 	
 	@RequestMapping("/")
 	public String index() {
-		return "Hola, esta es la pantalla de inicio";
+		return "Hello World!";
 	}
 	
 	@PostMapping("/saveProduct")
