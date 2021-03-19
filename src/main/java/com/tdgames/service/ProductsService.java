@@ -1,6 +1,5 @@
 package com.tdgames.service;
 
-
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,12 +27,11 @@ public class ProductsService {
 		return productsRepository.findAll();
 	}
 	
-	public void updateProduct(Products products) {
+	public void updateProduct(Products products){
 		productsRepository.save(products);
 	}
 	
 	public void deleteProduct(String id) {
 		productsRepository.deleteById(id.toString());
 	}
-	
 }

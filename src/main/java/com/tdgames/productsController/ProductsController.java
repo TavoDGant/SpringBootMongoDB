@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -11,18 +12,18 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-
 import com.tdgames.entity.Products;
 import com.tdgames.service.ProductsService;
 
 @RestController
+@CrossOrigin
 public class ProductsController {
 
 	@Autowired
 	private ProductsService productsService;
 	
 	@PostMapping("/saveProduct")
-	public String saveProduct(@RequestBody Products products) {
+	public String saveProduct(@RequestBody Products products){
 		productsService.saveProduct(products);
 		return ""+HttpStatus.OK;
 	}
@@ -43,5 +44,6 @@ public class ProductsController {
 		productsService.deleteProduct(id.toString());
 		return ""+HttpStatus.OK;
 	}
+	
 	
 }

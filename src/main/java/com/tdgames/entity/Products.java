@@ -19,7 +19,7 @@ public class Products {
 		
 	public Products() {
 		super();
-	}
+	}	
 	public Products(String id, String name, String description, Double price) {
 		super();
 		this.id = id;
@@ -51,9 +51,10 @@ public class Products {
 	public void setPrice(Double price) {
 		this.price = price;
 	}
+	
+	public static String getSequenceName() {
+		return SEQUENCE_NAME;
+	}
 		
-	
-	
-	
 	
 }
