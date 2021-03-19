@@ -19,6 +19,8 @@ public class ProductsService {
 	
 	public void saveProduct(Products products) {
 		products.setId(idIncrementService.generateSequence(Products.SEQUENCE_NAME));//This is to add an autoincrement ID
+		products.setName(products.getName().toLowerCase());
+		products.setDescription(products.getDescription().toLowerCase());
 		productsRepository.save(products);
 		System.out.println("Guardado");
 	}
@@ -32,6 +34,15 @@ public class ProductsService {
 	}
 	
 	public void deleteProduct(String id) {
-		productsRepository.deleteById(id.toString());
+		productsRepository.deleteById(id);
+	}
+	
+	public List<Products> findByNameContaining(String name) {
+		String nameLower = name.toLowerCase();
+		return productsRepository.findByNameContaining(nameLower);
+	}
+	
+	public List<Products> findByPrice(Double price) {
+		return productsRepository.findByPrice(price);
 	}
 }

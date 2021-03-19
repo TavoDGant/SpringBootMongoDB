@@ -33,6 +33,16 @@ public class ProductsController {
 		return productsService.showAll();
 	}
 	
+	@GetMapping("/searchProducts/{name}")
+	public List<Products> searchProducts(@PathVariable String name){
+		return productsService.findByNameContaining(name);
+	}
+	
+	@GetMapping("/productsByPrice/{price}")
+	public List<Products> productsByPrice(@PathVariable Double price){
+		return productsService.findByPrice(price);
+	}
+	
 	@PutMapping("/updateProduct")
 	public String updateProduct(@RequestBody Products products) {
 		productsService.updateProduct(products);
