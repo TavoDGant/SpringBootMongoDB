@@ -38,11 +38,11 @@ public class ProductsService {
 	}
 	
 	public List<Products> findByNameContaining(String name) {
-		String nameLower = name.toLowerCase();
-		return productsRepository.findByNameContaining(nameLower);
+		return productsRepository.findByNameContaining(name.toLowerCase());
 	}
 	
 	public List<Products> findByPrice(Double price) {
 		return productsRepository.findByPrice(price);
 	}
+	
 }
