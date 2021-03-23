@@ -16,11 +16,15 @@ import com.tdgames.entity.Products;
 import com.tdgames.service.ProductsService;
 
 @RestController
-@CrossOrigin
 public class ProductsController {
 
 	@Autowired
 	private ProductsService productsService;
+	
+	@GetMapping
+	public String index() {
+		return "Hi, You can see the documentation about this API here: https://spring-boot-mongo-db.herokuapp.com/swagger-ui.html";
+	}
 	
 	@PostMapping("/saveProduct")
 	public String saveProduct(@RequestBody Products products){
