@@ -16,6 +16,7 @@ import com.tdgames.entity.Products;
 import com.tdgames.service.ProductsService;
 
 @RestController
+@CrossOrigin
 public class ProductsController {
 
 	@Autowired
